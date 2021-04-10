@@ -6,13 +6,20 @@ const pug = require('gulp-pug') // процессор для html
 
 const browserSync = require('browser-sync') //сервер для Live разработки 
 
-function toPug(){
+function toPug() {
     return gulp.src('./src/*.pug')
         .pipe(pug())
         .pipe(gulp.dest("./src"));
 }
 
-function watch (){
+function style() {
+    return gulp.src('./src/sass/*.sass')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest('src/css'))
+        .pipe(browserSync.stream())
+}
+
+function watch() {
     browserSync. init({
         server:{
             baseDir:'./src',
@@ -21,6 +28,7 @@ function watch (){
     })
 }
 
+gulp.watch('./src/sass/*.sass').on('change', gulp.series(style,browserSync.reload));
 // gulp.watch('./src/index.html').on('change', browserSync.reload)
 gulp.watch('./src/*.pug').on('change', gulp.series(toPug,browserSync.reload));
 
