@@ -2,9 +2,9 @@ doctype html
 html(lang='ru')
 head 
     link(rel="stylesheet" href='./css/style.css')
-    link(rel="stylesheet", href='../css/swiper-bondle.min.css')
-    script(src='swiper-bondle.min.js' defer)
-    script(src='code.js' defer)
+    link(rel="stylesheet", href='./css/swiper-bondle.min.css')
+    //- script(src='swiper-bundle.min.js')
+    //- script(src='code.js')
 body 
     div(class="header-top")
         img(src="https://cdn1.ozone.ru/s3/cms/b7/t21/wc1450/2500_2.jpg" class="header_top__imaje")
@@ -25,10 +25,15 @@ body
             div.icon.icon_box заказы
             div.icon.icon_heart избранное
             div.icon.icon_bag корзина
-    div.swiper-container
-            div.swiper-wrapper
-                div.swiper-slide Slide 1
-                div.swiper-slide Slide 2
-                div.swiper-slide Slide 3
-
+iv.swiper-container
+    div.swiper-wrapper
+        div.swiper-slide
+            img(src='https://cdn1.ozone.ru/s3/sellerassets/c1450/357b8e54-8c9f-11eb-9864-16cf5e40fc22.jpeg')
+        div.swiper-slide
+            img(src='https://cdn1.ozone.ru/s3/sellerassets/c1450/664d1fd9-9152-11eb-8fe5-1a7faf841358.jpeg')
+        div.swiper-slide
+            img(src='https://cdn1.ozone.ru/s3/sellerassets/c1450/a3b026ec-9855-11eb-9e2c-0a526e2f90e3.jpeg')
+script(src="https://unpkg.com/swiper/swiper-bundle.js")
+script(src="https://unpkg.com/swiper/swiper-bundle.min.js")
+script(src='code.js')
             
